@@ -83,7 +83,14 @@ function QuizProvider({ children }) {
   );
 
   useEffect(function () {
-    fetch("http://localhost:9000/questions")
+    fetch('./questions.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((err) => dispatch({ type: "dataFailed" }));
