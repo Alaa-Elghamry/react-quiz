@@ -83,7 +83,7 @@ function QuizProvider({ children }) {
   );
 
   useEffect(function () {
-    fetch('./questions.json'
+    fetch('./../questions.json'
     ,{
       headers : { 
         'Content-Type': 'application/json',
