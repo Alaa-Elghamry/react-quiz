@@ -36,6 +36,7 @@ function reducer(state, action) {
         secondsRemaining: state.questions.length * SECS_PER_QUESTION,
       };
     case "newAnswer":
+      // get the current question 
       const question = state.questions.at(state.index);
 
       return {
@@ -43,6 +44,7 @@ function reducer(state, action) {
         answer: action.payload,
         points:
           action.payload === question.correctOption
+          /// add accumelated points
             ? state.points + question.points
             : state.points,
       };
