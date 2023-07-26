@@ -64,6 +64,8 @@ function reducer(state, action) {
         ...state,
         secondsRemaining: state.secondsRemaining - 1,
         status: state.secondsRemaining === 0 ? "finished" : state.status,
+        highscore:
+        state.points > state.highscore ? state.points : state.highscore,
       };
 
     default:
