@@ -7,7 +7,6 @@ const SECS_PER_QUESTION = 30;
 
 const initialState = {
   questions: [],
-
   // 'loading', 'error', 'ready', 'active', 'finished'
   status: "loading",
   index: 0,
@@ -48,7 +47,11 @@ function reducer(state, action) {
             : state.points,
       };
     case "nextQuestion":
-      return { ...state, index: state.index + 1, answer: null };
+      return { 
+        ...state,
+         index: state.index + 1, 
+         answer: null 
+        };
     case "finish":
       return {
         ...state,
